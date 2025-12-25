@@ -91,15 +91,6 @@
     margin-bottom: 16px;
   }
 
-  .location {
-    font-size: 14px;
-    color: var(--text-light);
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 8px;
-  }
-
   /* Main content layout */
   .main-content {
     display: grid;
@@ -254,6 +245,34 @@
   a:hover {
     color: var(--accent);
   }
+
+  /* Status */
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: var(--accent);
+    margin-top: 8px;
+    padding: 6px 12px;
+    background: rgba(37, 99, 235, 0.05);
+    border-radius: 4px;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+  }
+
+  .status::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
   </style>
 </head>
 <body>
@@ -264,9 +283,9 @@
         <img src="me.jpg" alt="Фото Ани" class="profile-photo">
       </div>
       <div class="header-content">
-        <h1 class="name">Аня, 27</h1>
+        <h1 class="name">Аня</h1>
         <div class="title">Джун-тестировщик в поиске классной позиции</div>
-        <div class="location">📍 Москва</div>
+        <div class="status">Готова к собеседованиям и тестовым заданиям</div>
       </div>
     </header>
 
@@ -275,6 +294,7 @@
       <div class="left-column">
         <!-- About -->
         <section class="section">
+          <h2 class="section-title">Обо мне</h2>
           <p class="about-text">
             Раньше 6+ лет работала автором и аналитиком контента — поэтому у меня очень развита логика, внимание к деталям и умение находить несостыковки. Люблю тщательно проверять ошибки, чтобы всё работало так, как должно.
           </p>
@@ -295,51 +315,31 @@
             <li class="skill-item">Английский C1</li>
           </ul>
         </section>
+      </div>
 
+      <!-- Right column -->
+      <div class="right-column">
         <!-- Contacts -->
         <section class="section">
           <h2 class="section-title">Контакты</h2>
           <ul class="contact-list">
             <li class="contact-item">
               <span class="contact-icon">📍</span>
-              <span>Москва</span>
+              <span>Москва (готова к переезду)</span>
             </li>
             <li class="contact-item">
               <span class="contact-icon">📧</span>
               <a href="mailto:braveblackbirdy@gmail.com">braveblackbirdy@gmail.com</a>
+            </li>
+            <li class="contact-item">
+              <span class="contact-icon">📱</span>
+              <a href="tel:+79267960720">+7 (926) 796-07-20</a>
             </li>
             <li class="contact-item">
               <span class="contact-icon">🔗</span>
               <a href="https://t.me/braveblackbirdy" target="_blank">Telegram: @braveblackbirdy</a>
             </li>
           </ul>
-        </section>
-      </div>
-
-      <!-- Right column -->
-      <div class="right-column">
-        <!-- Quick info -->
-        <section class="section">
-          <div style="margin-bottom: 24px;">
-            <div style="font-size: 18px; font-weight: 500; margin-bottom: 4px;">Аня, 27</div>
-            <div style="font-size: 14px; color: var(--text-light); margin-bottom: 8px;">Москва (готова к переезду)</div>
-            <div style="font-size: 14px; color: var(--accent);">Джун</div>
-          </div>
-
-          <div style="margin-bottom: 24px;">
-            <div class="contact-item" style="margin-bottom: 12px;">
-              <span class="contact-icon">📧</span>
-              <a href="mailto:braveblackbirdy@gmail.com">braveblackbirdy@gmail.com</a>
-            </div>
-            <div class="contact-item" style="margin-bottom: 12px;">
-              <span class="contact-icon">📱</span>
-              <a href="tel:+79267960720">+7 (926) 796-07-20</a>
-            </div>
-            <div class="contact-item">
-              <span class="contact-icon">🔗</span>
-              <a href="https://t.me/braveblackbirdy" target="_blank">Telegram</a>
-            </div>
-          </div>
         </section>
 
         <!-- Skills and tools -->
@@ -373,8 +373,11 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <div>© Аня — джун‑тестировщик • Готова к собеседованиям и тестовым заданиям.</div>
+      <div>© Аня — джун‑тестировщик</div>
     </footer>
+  </div>
+</body>
+</html>
   </div>
 </body>
 </html>
